@@ -1,0 +1,12 @@
+{% extends "core/base.html" %}
+
+{% block title %}Job Tracker - Home{% endblock %}
+
+{% block content %}
+    {% if user.is_authenticated %}
+    <h1>You are logged in the Job Tracker!</h1>
+    {% else %}
+    <h1>You are logged out the Job Tracker!</h1>
+    {% endif %}
+    
+{% endblock %}
