@@ -7,7 +7,7 @@ def index(request):
     return render(request, "core/index.html")
 
 def register_view(request):
-    if request.POST == "Post":
+    if request.method == "Post":
         form = RegisterForm(request.POST)
         if form.is_valid():
             form.save()
@@ -16,3 +16,7 @@ def register_view(request):
         form = RegisterForm()
 
     return render(request, "core/auth/register.html", {"form" : form})
+
+def logout_view(request):
+    logout(request)
+    return redirect("index")
