@@ -1,0 +1,17 @@
+{% extends "core/base.html" %}
+
+{% block title %}Job Tracker - Home{% endblock %}
+
+{% block content %}
+    <form method="post">
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Register</button>
+    </form>
+
+    <div>
+        <p>Have an account?</p>
+        <a href="{% url "login" %}">Sign in</a>
+    </div>
+    
+{% endblock %}
