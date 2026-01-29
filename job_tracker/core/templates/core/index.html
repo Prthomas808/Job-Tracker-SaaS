@@ -7,14 +7,12 @@
         {% include "core/nav.html" %}
         <div class="flex flex-col">
             <div class="flex items-center space-x-1 pt-1 py-3">
-                <h1 class="text-3xl font-semibold pl-3">Your job applications</h1>
+                <h1 class="text-3xl font-semibold pl-3">Your Job Applications</h1>
                 <a href="{% url "add_application" %}" class="text-xs bg-gray-200 px-2 py-2 rounded-2xl mt-2">Add application</a>
+                <a href="{% url "logout" %}" class="text-xs text-white bg-red-500 px-4 py-2 rounded-2xl mt-2">Logout</a>
             </div>
             
-            <hr>
             {% include "core/dashboard.html" %}
-
-            <a href='{% url "logout" %}'>Logout</a>
         </div>
 
 

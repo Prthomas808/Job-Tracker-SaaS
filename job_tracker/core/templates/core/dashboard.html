@@ -1,15 +1,17 @@
-<div class="pr-2">
+<div class="pr-2 ml-2">
     
     {% comment %} APPLIED {% endcomment %}
     <h1 class="text-xl font-bold pb-2 ml-1">Applied</h1>
 
-    <div class="flex">
+    <hr class="border-b-1 border-gray-500 w-1/4">
+
+    <div class="flex mt-2">
         {% for application in applications %}
             {% if application.status == "applied" %}
             <div class = "relative mb-8 mr-2">
                 <div class="absolute top-3 right-3 bg-gradient-to-r from-purple-300 to-pink-300 rounded-2xl w-80 h-60 "></div>
 
-                <div class="relative flex flex-col bg-gray-100 shadow-2xl p-2 rounded-2xl mb-2 h-60 w-80 ml-5">
+                <div class="relative flex flex-col bg-gray-300 shadow-2xl p-2 rounded-2xl mb-2 h-60 w-80 ml-5">
                     <h4>{{application.job_title}}</h4>
                     <p>{{application.location}}</p>
                     <p>○ {{application.status}}</p>
@@ -24,13 +26,15 @@
 
     <h1 class="text-xl font-bold pb-2 ml-1">Interview</h1>
 
-    <div class="flex">
+    <hr class="border-b-1 border-gray-500 w-1/4">
+
+    <div class="flex mt-2">
         {% for application in applications %}
             {% if application.status == "interview" %}
             <div class = "relative mb-8 mr-2">
                 <div class="absolute top-3 right-3 bg-gradient-to-r from-green-300 to-yellow-300 rounded-2xl w-80 h-60 "></div>
 
-                <div class="relative flex flex-col bg-gray-100 shadow-2xl p-2 rounded-2xl mb-2 h-60 w-80 ml-5">
+                <div class="relative flex flex-col bg-gray-300 shadow-2xl p-2 rounded-2xl mb-2 h-60 w-80 ml-5">
                     <h4>{{application.job_title}}</h4>
                     <p>{{application.location}}</p>
                     <p>○ {{application.status}}</p>
@@ -45,13 +49,15 @@
     {% comment %} Offer {% endcomment %}
     <h1 class="text-xl font-bold pb-2 ml-1">Offer</h1>
 
-    <div class="flex">
+    <hr class="border-b-1 border-gray-500 w-1/4">
+
+    <div class="flex mt-2">
         {% for application in applications %}
             {% if application.status == "offer" %}
             <div class = "relative mb-8 mr-2">
                 <div class="absolute top-3 right-3 bg-gradient-to-r from-blue-300 to-cyan-300 rounded-2xl w-80 h-60 "></div>
 
-                <div class="relative flex flex-col bg-gray-100 shadow-2xl p-2 rounded-2xl mb-2 h-60 w-80 ml-5">
+                <div class="relative flex flex-col bg-gray-300 shadow-2xl p-2 rounded-2xl mb-2 h-60 w-80 ml-5">
                     <h4>{{application.job_title}}</h4>
                     <p>{{application.location}}</p>
                     <p>○ {{application.status}}</p>
@@ -66,13 +72,15 @@
 
     <h1 class="text-xl font-bold pb-2 ml-1">Rejected</h1>
 
-    <div class="flex">
+    <hr class="border-b-1 border-gray-500 w-1/4">
+
+    <div class="flex mt-2">
         {% for application in applications %}
             {% if application.status == "rejected" %}
             <div class = "relative mb-8 mr-2">
                 <div class="absolute top-3 right-3 bg-gradient-to-r from-red-500 to-pink-300 rounded-2xl w-80 h-60 "></div>
 
-                <div class="relative flex flex-col bg-gray-100 shadow-2xl p-2 rounded-2xl mb-2 h-60 w-80 ml-5">
+                <div class="relative flex flex-col bg-gray-300 shadow-2xl p-2 rounded-2xl mb-2 h-60 w-80 ml-5">
                     <h4>{{application.job_title}}</h4>
                     <p>{{application.location}}</p>
                     <p>○ {{application.status}}</p>
