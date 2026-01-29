@@ -1,17 +1,31 @@
 {% extends "core/base.html" %}
+{% load crispy_forms_tags %}
+
 
 {% block title %}Job Tracker - Home{% endblock %}
 
 {% block content %}
-    <form method="post">
-        {% csrf_token %}
-        {{ form.as_p }}
-        <button type="submit">Sign In</button>
-    </form>
+     <div class="flex flex-col w-full justify-center items-center m-10 ">
+        <h1 class="text-4xl font-semibold pb-3">Sign In</h1>
+        <div class="flex flex-col justify-center items-center p-5 rounded-2xl">
+            <form method="post">
+                {% csrf_token %}
+                {{ form|crispy }}
+                <button type="submit" class="px-5 py-2 bg-black text-white rounded-xl w-full mb-2">Sign In</button>
+            </form>
 
-    <div>
-        <p>Don't have an account?</p>
-        <a href="{% url "register" %}">Sign up</a>
+            <div class="flex space-x-1">
+                 <p>Don't have an account?</p>
+                <a href="{% url "register" %}" class="font-bold underline">Sign up</a>
+            </div>
+        </div>
+
+        <div class="flex space-x-5">
+            <p>✓ Track applications</p>
+            <p>✓ See response analytics</p>
+            <p>✓ Identify hiring bottlenecks</p>
+        </div>
     </div>
+
     
 {% endblock %}

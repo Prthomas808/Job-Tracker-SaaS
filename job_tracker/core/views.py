@@ -14,9 +14,11 @@ def register_view(request):
             return redirect("index")
     else:
         form = RegisterForm()
-
     return render(request, "core/auth/register.html", {"form" : form})
 
 def logout_view(request):
     logout(request)
-    return redirect("index")
+    return redirect("login")
+
+def add_application_view(request):
+    return render(request, "core/add_application.html")
