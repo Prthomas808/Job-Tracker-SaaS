@@ -5,7 +5,8 @@ from .models import Application
 
 # Create your views here.
 def index(request):
-    return render(request, "core/index.html")
+    applications = Application.objects.all()
+    return render(request, "core/index.html", {"applications" : applications})
 
 def register_view(request):
     if request.method == "Post":
@@ -26,7 +27,7 @@ def add_application_view(request):
         form = AddApplicationForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("dashboard")
+            return redirect("index")
     else:
         form = AddApplicationForm()
 

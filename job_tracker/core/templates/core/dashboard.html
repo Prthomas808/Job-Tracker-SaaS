@@ -1,4 +1,88 @@
-<div class="flex items-center space-x-1 pt-3">
-    <h1 class="text-3xl font-semibold pl-3">Your job applications</h1>
-    <a href="{% url "add_application" %}" class="text-xs bg-gray-200 px-2 py-2 rounded-2xl">Add application</a>
+<div class="pr-2">
+    
+    {% comment %} APPLIED {% endcomment %}
+    <h1 class="text-xl font-bold pb-2 ml-1">Applied</h1>
+
+    <div class="flex">
+        {% for application in applications %}
+            {% if application.status == "applied" %}
+            <div class = "relative mb-8 mr-2">
+                <div class="absolute top-3 right-3 bg-gradient-to-r from-purple-300 to-pink-300 rounded-2xl w-80 h-60 "></div>
+
+                <div class="relative flex flex-col bg-gray-100 shadow-2xl p-2 rounded-2xl mb-2 h-60 w-80 ml-5">
+                    <h4>{{application.job_title}}</h4>
+                    <p>{{application.location}}</p>
+                    <p>○ {{application.status}}</p>
+                    <p>{{application.applied}}</p>
+                </div>
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    {% comment %} Interview {% endcomment %}
+
+    <h1 class="text-xl font-bold pb-2 ml-1">Interview</h1>
+
+    <div class="flex">
+        {% for application in applications %}
+            {% if application.status == "interview" %}
+            <div class = "relative mb-8 mr-2">
+                <div class="absolute top-3 right-3 bg-gradient-to-r from-green-300 to-yellow-300 rounded-2xl w-80 h-60 "></div>
+
+                <div class="relative flex flex-col bg-gray-100 shadow-2xl p-2 rounded-2xl mb-2 h-60 w-80 ml-5">
+                    <h4>{{application.job_title}}</h4>
+                    <p>{{application.location}}</p>
+                    <p>○ {{application.status}}</p>
+                    <p>{{application.applied}}</p>
+                </div>
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+
+    {% comment %} Offer {% endcomment %}
+    <h1 class="text-xl font-bold pb-2 ml-1">Offer</h1>
+
+    <div class="flex">
+        {% for application in applications %}
+            {% if application.status == "offer" %}
+            <div class = "relative mb-8 mr-2">
+                <div class="absolute top-3 right-3 bg-gradient-to-r from-blue-300 to-cyan-300 rounded-2xl w-80 h-60 "></div>
+
+                <div class="relative flex flex-col bg-gray-100 shadow-2xl p-2 rounded-2xl mb-2 h-60 w-80 ml-5">
+                    <h4>{{application.job_title}}</h4>
+                    <p>{{application.location}}</p>
+                    <p>○ {{application.status}}</p>
+                    <p>{{application.applied}}</p>
+                </div>
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+
+    {% comment %} Rejected {% endcomment %}
+
+    <h1 class="text-xl font-bold pb-2 ml-1">Rejected</h1>
+
+    <div class="flex">
+        {% for application in applications %}
+            {% if application.status == "rejected" %}
+            <div class = "relative mb-8 mr-2">
+                <div class="absolute top-3 right-3 bg-gradient-to-r from-red-500 to-pink-300 rounded-2xl w-80 h-60 "></div>
+
+                <div class="relative flex flex-col bg-gray-100 shadow-2xl p-2 rounded-2xl mb-2 h-60 w-80 ml-5">
+                    <h4>{{application.job_title}}</h4>
+                    <p>{{application.location}}</p>
+                    <p>○ {{application.status}}</p>
+                    <p>{{application.applied}}</p>
+                </div>
+            </div>
+            {% endif %}
+        {% endfor %}
+    </div>
+
 </div>
+
+
