@@ -12,7 +12,7 @@ class Application(models.Model):
     company_name = models.CharField(max_length=50)
     job_title = models.CharField(max_length=100)
     location = models.CharField(max_length=100)
-    application_url = models.TextField()
+    application_url = models.CharField(max_length=500)
     status = models.CharField(max_length=20, choices=status_choices, blank=True)
     applied = models.DateField()
     notes = models.TextField()

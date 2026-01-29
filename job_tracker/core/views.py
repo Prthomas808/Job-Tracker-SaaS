@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
-from .forms import RegisterForm
+from .forms import RegisterForm, AddApplicationForm
+from .models import Application
 
 # Create your views here.
 def index(request):
@@ -21,4 +22,12 @@ def logout_view(request):
     return redirect("login")
 
 def add_application_view(request):
-    return render(request, "core/add_application.html")
+    if request.method == "POST":
+        form = AddApplicationForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect("dashboard")
+    else:
+        form = AddApplicationForm()
+
+    return render(request, "core/add_application.html", {"form" : form})

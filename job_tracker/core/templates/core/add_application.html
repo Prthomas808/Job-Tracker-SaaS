@@ -1,8 +1,16 @@
 {% extends "core/base.html" %}
+{% load crispy_forms_tags %}
 
 {% block title %}Add Application{% endblock %}
 
 
 {% block content %}
-    <h1>Add Application Page</h1>
+    <div class=" m-5">
+        <h1 class="text-3xl font-bold pb-2">Add Application Page</h1>
+        <form method="post">
+            {% csrf_token %}
+            {{ form|crispy }}
+            <button type="submit" class="bg-black text-white hover:bg-gray-800 px-3 py-3 rounded-2xl w-full">Add Application</button>
+        </form>
+    </div>
 {% endblock %}

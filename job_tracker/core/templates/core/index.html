@@ -4,13 +4,12 @@
 
 {% block content %}
     {% if user.is_authenticated %}
-    {% include "core/nav.html" %}
-    {% include "core/dashboard.html" %}
-    {% comment %} <h1>You are logged in the Job Tracker!</h1> {% endcomment %}
-    <a href='{% url "logout" %}'>Logout</a>
+        {% include "core/nav.html" %}
+        <a href='{% url "logout" %}'>Logout</a>
+        {% include "core/dashboard.html" %}
+        {% comment %} <h1>You are logged in the Job Tracker!</h1> {% endcomment %}
     {% else %}
-    <h1>You are logged out the Job Tracker!</h1>
-    <a href="{% url "login" %}">Sign In</a>
+        <h1>You are logged out the Job Tracker!</h1>
+        <a href="{% url "login" %}">Sign In</a>
     {% endif %}
-    
 {% endblock %}
